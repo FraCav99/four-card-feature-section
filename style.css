@@ -1,0 +1,155 @@
+:root {
+  /* Primary */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue-hsl: 229, 6%, 66%;
+  --grayish-blue: hsl(var(--grayish-blue-hsl));
+  --very-light-gray: hsl(0, 0%, 98%);
+
+  /* Font-weights */
+  --fw-200: 200;
+  --fw-400: 400;
+  --fw-600: 600;
+
+  /* Font size */
+  --fs-400: 0.9375rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh; /* Fallback if dvh is not supported */
+  min-height: 100dvh;
+
+  font-family: "Poppins", sans-serif;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  color: var(--very-dark-blue);
+  font-weight: var(--fw-200);
+  background-color: var(--very-light-gray);
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.page-title {
+  font-size: clamp(1.25rem, -0.1786rem + 7.1429vw, 2.5rem);
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-weight: var(--fw-400);
+  color: var(--grayish-blue);
+}
+
+.fw-400 {
+  font-weight: var(--fw-400);
+}
+
+.fw-600 {
+  font-weight: var(--fw-600);
+}
+
+.grid {
+  --gap: 1.5rem;
+
+  display: grid;
+  gap: var(--gap);
+  width: min(calc(100% - 6rem), 75rem);
+  margin-inline: auto;
+}
+
+@media screen and (min-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    align-self: start;
+  }
+}
+
+.middle-column {
+  display: grid;
+  gap: var(--gap);
+}
+
+.card {
+  border-radius: 0.5rem;
+  border-top: 0.25rem solid var(--item-color);
+  box-shadow: 0 10px 10px hsl(var(--grayish-blue-hsl), 0.2);
+  padding: 2rem 1.85rem;
+  font-weight: var(--fw-400);
+}
+
+.card > * + * {
+  margin-top: 1rem;
+}
+
+.card h2 {
+  font-weight: var(--fw-600);
+  font-size: 1.25rem;
+}
+
+.card p {
+  color: var(--grayish-blue);
+  font-size: var(--fs-400);
+}
+
+.card img {
+  margin-left: auto;
+  margin-top: 3rem;
+}
+
+.supervisor {
+  --item-color: var(--cyan);
+}
+
+.team-builder {
+  --item-color: var(--red);
+}
+
+.karma {
+  --item-color: var(--orange);
+}
+
+.calculator {
+  --item-color: var(--blue);
+}
+
+footer {
+  padding: 2rem;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
