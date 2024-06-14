@@ -81,21 +81,21 @@ header {
 
   display: grid;
   gap: var(--gap);
-  width: min(calc(100% - 6rem), 75rem);
+  width: min(calc(100% - 3rem), 75rem);
   margin-inline: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    align-self: start;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-    align-self: start;
   }
-}
-
-.middle-column {
-  display: grid;
-  gap: var(--gap);
 }
 
 .card {
@@ -139,6 +139,18 @@ header {
 
 .calculator {
   --item-color: var(--blue);
+}
+
+@media screen and (min-width: 1000px) {
+  .supervisor,
+  .calculator {
+    grid-row: span 2;
+    align-self: center;
+  }
+
+  .karma {
+    grid-area: 2 / 2 / 3 / 3;
+  }
 }
 
 footer {
